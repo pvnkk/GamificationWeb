@@ -1,0 +1,102 @@
+* {
+    font-family: Poppins;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.gameContainer {
+    background: rgb(95,37,159);
+    background: linear-gradient(343deg, rgba(95,37,159,1) 1%, rgba(152,76,205,1) 1%);
+    /* padding-top: 40px; */
+    padding: 25px 20px;
+}
+
+.backButton {
+    margin-bottom: 15px;
+}
+
+.gameTabs {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    /* margin-inline: 20px; */
+    border-radius: 15px;
+    background-color: #7C3FAB;
+    height: 90px; 
+    align-items: center;
+}
+
+.gameTabs .gameTab {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 107px;
+    width: 100%;
+}
+
+.gameTabs .gameTab>img{
+    filter: brightness(.5) invert(0.7)
+}
+
+.gameTabs .gameTab.active>img{
+    filter: none;
+}
+
+.gameTabs .gameTab>p {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 17px;
+    height: 17px;
+    margin-top: 5px;
+    color: #FFFFFF80;
+}
+
+.gameTabs .gameTab.active{
+    background: #ffffff40;
+    height: 90px;
+    border-radius: 15px;
+}
+
+.gameTabs .gameTab.active > p {
+    color: #FFFFFF;
+}
+
+.listGameContainer #game-list{
+    display: grid;
+    grid-template-columns: auto auto;
+    /* margin-inline: 20px; */
+    justify-content: space-around;
+    align-content: center;
+    margin-top: 30px;
+}
+
+
+.listGameContainer #game-list .game>p.gameName{ 
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFFFF;
+    filter: drop-shadow(0px 3px 3px #57008D4D);
+    margin: 0;
+    margin-top: 5px;
+}
+.noLeaders {
+    margin: 40px auto;
+    text-align: center;
+    font-size: 22px;
+    color: white;
+    font-weight: 600;
+}
+
+.listGameContainer_title {
+    font-size: 16px;
+    text-align: center;
+    line-height: 20px;
+    color: #FFFFFF;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}

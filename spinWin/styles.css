@@ -1,0 +1,241 @@
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+} */
+
+* {
+    font-family: Poppins;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.gameContainer {
+    margin: 20px 25px 40px 25px;
+    /* background: linear-gradient(180deg, #FF9F5C 1%, #FF6900 1%); */
+}
+
+.spinGameGrid {
+    height: calc(100vh - 60px);
+    display: grid;
+    grid-template-rows: auto 1fr auto ;
+    /* grid-template-rows: 30px calc(100vh - 180px) 60px; */
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.gameContainer .header-flex {
+    display: flex;
+    justify-content: space-between;
+    color: #ffffff; 
+    height: 25px; 
+    align-items: center;
+}
+
+.gameContainer .header-flex .gameName {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.gameContainer .header-flex .gameTermsLabel {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+#wheel-container {
+    display: inline-grid;
+    align-items: center; 
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+canvas {
+    border: 5px solid #333;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.spinButtons {
+    text-align: center; 
+}
+
+#spinWheelImage {
+    /* box-shadow: 0 0 0 30px #ff9c57, 0 0 0 50px #ff9a55, 0 0 0 70px #ff984f;
+    border-radius: 50%;
+    height: 263px;
+    width: 290px; */
+    /* margin: 0px auto;
+    width: 290px;
+    min-height: 290px;
+    border-radius: 50%; 
+    box-shadow: 0 0 0 30px #ff9c57, 0 0 0 50px #ff9a55, 0 0 0 70px #ff984f;
+    text-align: center;
+    align-content: center; */
+}
+
+.gameSucceesFailImage{ 
+    position: relative;
+    width: 100%;
+    height: 254px;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+}
+
+#spin-button,#button-done {
+    box-sizing: border-box;
+    height: 50px;
+    width: 240px;
+    border: 4px solid rgba(255,255,255,0.22);
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    color: #6731A5; 
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: 45px; 
+    font-family: Poppins;
+    display: inline-block;
+}
+.spinRedeemBtn{
+    text-align: center;
+}
+.spinRedeemBtn .redeemBtn{
+    height: 35px;
+    width: 151px;
+    border-radius: 17.5px;
+    background: linear-gradient(270deg, #0091FF 0%, #0168FF 100%);
+    color: #FFFFFF;
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 35px;    
+    display: inline-block;
+}
+
+#spinWheelImage.active {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    margin:-60px 0 0 -60px; */
+    -webkit-animation:spin 2s linear infinite;
+    -moz-animation:spin 2s linear infinite;
+    animation:spin 2s linear infinite;
+}
+@-moz-keyframes spin { 
+    100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
+}
+.gameTerms  {
+    margin-bottom: 10px;
+}
+
+.gameTerms>span {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+} 
+
+.textWhite {
+    color: #FFFFFF;
+}
+
+/* result Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.modal-content {
+    /* background-color: #fefefe; */
+    /* border: 1px solid #888; */
+    /* width: 80%; */
+    margin: 5% 25px;
+    padding: 30px 40px;
+    /* max-width: 500px; */
+    text-align: center;
+    box-sizing: border-box;
+    height: 360px;
+    /* width: 100%; */
+    border: 1px solid #979797;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+}
+
+.modal-content #result-points {
+    margin-top: 20px;
+}
+.modal-content #result-points>span{
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 40px;
+    color: #686B6E;
+    display: block;
+
+}
+
+.modal-content #result-points .result-points-number {
+    color: #3CB300;
+}
+
+.modal-content #result-text{
+    color: #231F20;
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 40px;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 20px;
+ }
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ 

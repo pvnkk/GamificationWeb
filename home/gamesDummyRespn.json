@@ -1,0 +1,86 @@
+{
+    "requestId": "12213123",
+    "timestamp": "20200501111211",
+    "respCode": "SC0000",
+    "respDesc": "Games Retrieved",
+    "responseDetail": {
+      "games": [
+        {
+            "gameId": "716",
+            "gameTitle": "Spin & Win",
+            "gameType": "SpinNWin",
+            "executionStatus": "Active",
+            "memberType": "MSISDN",
+            "msisdnList": [
+              {
+                "msisdn": "89056457878"
+              },
+              {
+                "msisdn": "89056457871"
+              },
+              {
+                "msisdn": "89056457879"
+              }
+            ],
+            "displayDetails": {
+              "language": "EN",
+              "name": "Spin & Win",
+              "description": "Spin And Win  Desc",
+              "synonym": "Spin And Win Synonym",
+              "imageList": [
+                    {
+                    "idtype": "ImageMedium",
+                    "name": "./../assets/images/spinWin.svg"
+                    },
+                    {
+                    "idtype": "ImageLarge",
+                    "name": "./../assets/images/spinWin.svg"
+                    },
+                    {
+                    "idtype": "ImageSmall",
+                    "name": "./../assets/images/spinWin.svg"
+                    }
+              ]
+            }
+          },
+          {
+              "gameId": "717",
+              "gameTitle": "Shake N Win",
+              "gameType": "ShakeNWin",
+              "executionStatus": "Active",
+              "memberType": "MSISDN",
+              "msisdnList": [
+                {
+                  "msisdn": "89056457878"
+                },
+                {
+                  "msisdn": "89056457871"
+                },
+                {
+                  "msisdn": "89056457879"
+                }
+              ],
+              "displayDetails": {
+                "language": "EN",
+                "name": "Refer & Win",
+                "description": "Refer And Win  Desc",
+                "synonym": "Refer And Win Synonym",
+                "imageList": [
+                  {
+                    "idtype": "ImageMedium",
+                    "name": "./../assets/images/referwin.png"
+                  },
+                  {
+                    "idtype": "ImageLarge",
+                    "name": "ImageLarge.jpeg"
+                  },
+                  {
+                    "idtype": "ImageSmall",
+                    "name": "ImageSmall.jpeg"
+                  }
+                ]
+              }
+        }
+      ]
+    }   
+}

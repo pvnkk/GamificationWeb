@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    
+    <!--http://www.html5rocks.com/en/mobile/mobifying/-->
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui=true"/>
+
+    <!--https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- force webkit on 360 -->
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <!-- force edge on IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- force full screen on some browser -->
+    <meta name="full-screen" content="yes"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <title>Spin and Win</title>
+    <link rel="stylesheet" href="../assets/fonts.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="gameContainer">
+    <div class="backButton">
+    </div>
+    <div class="spinGameGrid spinGameWheelCircle" id="spinGameGrid">
+        <div class="header-flex">
+            <img src="../assets/images/ArrowLeftLong.svg" height="15px" alt="" onclick="history.back()">
+            <p class="gameName">Spin & Win 
+                <span id="detectDeviceName" style="display: none;"></span></p>
+            <p class="gameTermsLabel"></p>
+        </div>
+        <div id="wheel-container">
+            <canvas style="display: none;" id="wheel" width="313" height="313"></canvas>
+            <img src="" alt="noimage" id="spinWheelImage">
+        </div>
+        <div class="spinButtons" id="spinButtons" style="display: block">
+            <div class="gameTerms">
+                <span class="textWhite info">
+                    You have earned <b>Spin & Win</b> game as you made 5 payments 
+                    through our App last week!
+                </span>
+                <span class="textWhite " style="margin-top: 10px;">
+                    Spin the wheel and get exciting rewards.
+                </span>
+            </div>
+            <span id="spin-button">Spin Now</span>
+        </div>        
+    </div>
+
+    <div class="spinGameGrid gameSucceesFailMessage" id="gameSucceesFailPanel" style="display: none;">
+        <div>
+            <div style="position: absolute;right: 20px;">
+                <img src="../assets/images/timesImage.svg" height="25px" alt="" onclick="history.back()"/>
+            </div>
+            <div style="display: block;text-align: center;width: 100%;margin-top: 35px;">
+                <span class="gameSucceesFailMessage textWhite" id="gameSucceesFailMessage" style="display: block;font-size: 22px;" >
+                    Congratulations!
+                </span>
+            </div>
+        </div>
+        <div>
+            <div class="gameSucceesFailImage">
+                <div id="animationContainer" style="width: 100%; height: 500px;position: absolute;"></div>
+                <img src="../assets/images/starbucks.png"  alt="no-image" style="width: 254px;"/>
+            </div>
+        </div>
+        <div class="spinButtons" id="spinButtons" style="display: block">
+            <div class="gameTerms">
+                <span class="textWhite info" style="font-size: 14px;line-height: 32px;">
+                     You won reward
+                </span>
+                <span class="textWhite " style="font-size: 20px;line-height: 47px;height: 47px;">
+                    Enjoy Starbucks gift voucher
+                </span>
+                <span class="textWhite " id="exploreRewardsBtn" style="font-size: 14px;line-height: 32px;font-weight: bold;">
+                   <img src="../assets/images/giftbox.svg" style="vertical-align: middle;"/> Explore Reward &gt;
+                </span>
+            </div>
+            <span id="button-done" style="margin-top: 60px;font-weight: bold;">Done</span>
+        </div>
+    </div>
+
+    <!-- Result Modal -->
+    <div id="result-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <!-- <span class="close-button">&times;</span> -->
+            <p id="result-text"></p>
+            <img id="result-modal-img" src="../assets/images/sucess.svg" />
+            <p id="result-points">
+                <span class="result-points-label">You Earned </span>
+                <span  class="result-points-number">200 Points</span>
+            </p>
+        </div>
+        <div class="spinRedeemBtn" id="spinRedeemBtn" style="display: none;">
+            <span class="redeemBtn" id="redeemBtn">Redeem</span>
+        </div>
+    </div>
+
+    <script src="../assets/js/lottie.min.js"></script>
+    <script src="spin.js"></script>
+</body>
+</html>

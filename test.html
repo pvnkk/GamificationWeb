@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+</head>
+<body>
+    <div id="map" style="height: 500px;"></div>
+</body>
+<script>
+// Initialize the map
+var map = L.map('map').setView([51.505, -0.09], 13);
+
+// Add a tile layer
+L.tileLayer("https://{s}.tile.thunderforest.com/transport//{z}/{x}/{y}.png", {
+    maxZoom: 19,
+}).addTo(map);
+
+// Get user's location
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+        var lat = position.coords.latitude;
+        var lon = position.coords.longitude;
+        map.setView([lat, lon], 13);
+
+        // Add a marker for user's location
+        L.marker([lat, lon]).addTo(map).bindPopup('You are here').openPopup();
+
+        // Fetch hospitals data using Overpass API
+        var overpassUrl = 'https://overpass-api.de/api/interpreter?data=[out:json];node[amenity=hospital](around:5000,' + lat + ',' + lon + ');out;';
+        
+        console.log("overpassUrl", overpassUrl)
+
+        fetch(overpassUrl)
+            .then(response => response.json())
+            .then(data => {
+                console.log("data", data),
+                
+                data.elements.forEach(hospital => {
+                    // L.marker([hospital.lat, hospital.lon]).addTo(map)
+                    //     .bindPopup(hospital.tags.name || 'Unnamed Hospital');
+                });
+            })
+            .catch(error => console.log('Error fetching hospital data:', error));
+    });
+} else {
+    alert('Geolocation is not supported by your browser');
+}
+
+</script>
+</html>
